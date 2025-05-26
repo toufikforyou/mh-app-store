@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 
 /* Brand Colors */
@@ -77,9 +78,9 @@ header {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow for white bg */
 }
 
-.navbar .container { 
+.navbar .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the logo */
   align-items: center;
 }
 
@@ -91,79 +92,7 @@ header {
   text-shadow: none; /* Removed text shadow as it might not look good on white */
 }
 
-.header-right-content {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-.nav-links li {
-  margin-right: 25px;
-}
-.nav-links li:last-child {
-  margin-right: 0;
-}
-
-
-.nav-links a {
-  color: var(--medium-gray); /* Changed to medium gray */
-  text-decoration: none;
-  font-size: 1.05em;
-  transition: color 0.3s ease, border-bottom-color 0.3s ease;
-  padding: 5px 0;
-  border-bottom: 2px solid transparent;
-}
-
-.nav-links a:hover, .nav-links a.active {
-  color: var(--primary-blue); /* Hover/active color to primary blue */
-  border-bottom-color: var(--primary-blue); /* Underline color to primary blue */
-}
-
-/* Search Bar */
-.search-container {
-  display: flex;
-  align-items: center;
-  margin-left: 30px; /* Add margin to separate from nav links */
-}
-
-#searchInput {
-  padding: 10px 15px;
-  border: 1px solid var(--border-color);
-  border-radius: 20px 0 0 20px;
-  font-size: 0.95em;
-  width: 280px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: var(--light-bg); /* Changed from transparent white to light-bg */
-  color: var(--dark-text);
-}
-
-#searchInput:focus {
-    outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 0.2rem rgba(var(--primary-blue-rgb),.25);
-    background-color: var(--white-color);
-}
-
-#searchButton {
-  padding: 10px 18px;
-  background-color: var(--primary-blue); /* Changed to primary blue */
-  color: white;
-  border: none;
-  border-radius: 0 20px 20px 0;
-  cursor: pointer;
-  font-size: 0.95em;
-  transition: background-color 0.3s ease;
-}
-
-#searchButton:hover {
-  background-color: #0056b3; /* Darker blue */
-}
+/* Removed unused styles for .header-right-content, .nav-links, and .search-container */
 
 /* Main Content */
 main {
@@ -326,163 +255,139 @@ footer {
 
 /* App Details Page */
 #app-banner-placeholder {
-    width: 100%;
-    height: 380px; 
-    background-color: var(--medium-gray); 
-    background-size: cover;
-    background-position: center center; 
-    position: relative;
-    display: flex; 
-    align-items: flex-end; 
-    margin-bottom: 30px; /* Added margin-bottom */
+  /* Basic styling for the banner placeholder */
+  height: 300px; /* Example height, adjust as needed */
+  background-color: var(--light-gray); /* Placeholder color */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* For pseudo-elements or overlay content */
+  margin-bottom: 20px;
 }
 
-#app-banner-placeholder::before { 
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.8) 100%); /* Darker gradient from bottom */
-    z-index: 1;
+#app-banner-placeholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(var(--primary-blue-rgb), 0.1); /* Subtle overlay */
 }
 
 .app-detail-header {
-    /* Removed margin-top, positioning is now handled by flex on placeholder */
-    position: relative; 
-    z-index: 2; 
-    width: 100%; /* Take full width of the banner */
-    padding: 0 40px 30px 40px; /* Bottom padding, side padding */
-    margin-bottom: 40px; 
+  display: flex;
+  align-items: flex-start; /* Align items to the start for better layout with varying text lengths */
+  margin-bottom: 30px; /* Increased margin */
+  padding: 20px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .app-detail-header-content {
-    display: flex;
-    align-items: center; /* Changed from flex-end to center */
-    gap: 30px; 
+    display: flex; /* Use flexbox for icon and text alignment */
+    align-items: flex-start; /* Align icon to the top of the text block */
     width: 100%;
 }
 
 .app-detail-icon {
-    width: 120px; /* Slightly smaller, more refined icon size */
-    height: 120px;
-    border-radius: 22px; 
-    /* margin-right: 0; Replaced by gap in parent */
-    object-fit: cover;
-    border: 4px solid rgba(255,255,255,0.8); /* Semi-transparent white border */
-    box-shadow: 0 5px 18px rgba(0,0,0,0.3); 
-    background-color: var(--light-gray);
-    position: relative; 
-    z-index: 3; 
-    flex-shrink: 0; /* Prevent icon from shrinking */
+  width: 120px; /* Increased size */
+  height: 120px;
+  margin-right: 25px; /* Increased margin */
+  border-radius: 12px; /* Softer corners */
+  object-fit: cover; /* Ensure icon covers the area without distortion */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 .app-detail-main-info {
-    flex-grow: 1; 
-    color: var(--white-color);
-    /* padding-bottom: 5px; Removed as align-items: center is used */
+  flex-grow: 1; /* Allow text info to take remaining space */
+  display: flex;
+  flex-direction: column;
 }
 
 .app-detail-main-info h1 {
-    margin-top: 0;
-    font-size: 2.6em; 
-    color: var(--dark-text); /* Changed to black (var(--dark-text)) */ 
-    font-weight: 600; /* Slightly less bold for modern feel */
-    margin-bottom: 8px; 
-    text-shadow: none; /* Removed text-shadow */
-    line-height: 1.2;
+  font-size: 2em; /* Adjusted for prominence */
+  color: var(--dark-text);
+  margin-bottom: 8px; /* Reduced margin for tighter grouping with meta info */
 }
 
 .app-meta-row {
     display: flex;
     align-items: center;
-    gap: 15px; 
-    margin-bottom: 8px;
+    margin-bottom: 10px; /* Space between meta rows */
+    gap: 15px; /* Space between items in a row */
 }
 
 .app-category, .app-version {
-    font-size: 0.95em;
-    color: #e0e0e0; /* Reverted to a light color for visibility on dark gradient */
-    text-shadow: none; 
-    background-color: transparent; /* Removed background color */
-    padding: 0; /* Removed padding */
-    border-radius: 0; /* Removed border-radius */
+  font-size: 0.95em;
+  color: var(--medium-gray);
+  background-color: #e9ecef;
+  padding: 3px 8px;
+  border-radius: 4px;
 }
 
 .app-rating-row {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between rating and price */
-    margin-bottom: 0; /* No margin if it's the last item in this block */
+    margin-bottom: 15px; /* Space before price/download */
 }
 
 .app-detail-main-info .app-rating {
-    display: flex; 
-    align-items: center;
-    font-size: 0.95em; 
-    color: #e0e0e0; 
-    text-shadow: none; /* Removed text-shadow */
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  color: var(--medium-gray);
 }
 
 .app-detail-main-info .app-rating .stars {
-    font-size: 1.2em; 
-    color: #ffc107;
-    margin-right: 6px; 
+  color: #ffc107; /* Gold color for stars */
+  margin-right: 8px;
+  font-size: 1.2em; /* Slightly larger stars */
 }
 
 .app-price-tag {
-    font-size: 1em;
-    font-weight: 600;
-    color: var(--white-color);
-    background-color: var(--secondary-green); 
-    padding: 4px 10px;
-    border-radius: 5px;
-    text-shadow: none; /* Removed text-shadow */
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--secondary-green);
+    margin-left: auto; /* Pushes price to the right if in a flex container with other items */
 }
 
 .app-detail-actions {
-    margin-left: auto; 
-    /* padding-bottom: 5px; Removed as align-items: center is used */
-    flex-shrink: 0; 
+  margin-top: 15px; /* Add some space above the download button */
+  display: flex; /* Align button if there were multiple actions */
 }
 
 .main-download-btn {
-    background-color: var(--primary-blue); /* Changed to primary blue */
-    color: var(--white-color);
-    padding: 12px 28px; /* Larger padding */
-    font-size: 1.15em; 
-    font-weight: 600;
-    border-radius: 8px; /* Less rounded, more modern */
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-flex; 
-    align-items: center; 
-    gap: 10px; /* Increased gap */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    border: none; 
+  background-color: var(--primary-blue);
+  color: var(--white-color);
+  text-decoration: none;
+  padding: 12px 25px; /* Larger padding */
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  display: inline-flex; /* For icon alignment */
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  border: none; /* Remove default border */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(var(--primary-blue-rgb), 0.3);
 }
 
 .main-download-btn svg {
-    width: 22px; 
-    height: 22px;
-    fill: currentColor; 
+  width: 20px;
+  height: 20px;
 }
 
 .main-download-btn:hover {
-    background-color: #0056b3; /* Darker blue */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  background-color: #0056b3; /* Darker blue for hover state */
+  box-shadow: 0 4px 8px rgba(var(--primary-blue-rgb), 0.4);
 }
 
 /* Remove old .app-detail-info styles that are now handled by .app-detail-main-info or sub-elements */
+/* Commented out or remove if not used elsewhere 
 .app-detail-info {
-    /* This class is no longer used for the main text block, 
-       but might be used elsewhere or can be removed if not. 
-       For now, clearing potentially conflicting styles. */
-    background-color: transparent;
-    padding: 0;
-    color: inherit;
+    display: none; 
 }
 .app-detail-info h1, 
 .app-detail_info p, 
@@ -490,221 +395,240 @@ footer {
 .app-detail_info .app-category-version, 
 .app-detail-info .app-rating, 
 .app-detail-info .app-price {
-    /* Resetting styles that are now more specific or handled differently */
-    margin: 0;
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    text-shadow: none;
-    background-color: transparent;
+    display: none; 
 }
+*/
 
 
 /* Adjustments for content below the banner/header */
 #app-details-container > section, 
 #app-details-container > .tabs-container { /* Apply to both sections and the new tabs container */
-    margin-top: 20px;
-    /* padding: 25px; Padding will be handled by card-style-section or specific elements */
-    /* background: var(--white-color); Background will be handled by card-style-section */
-    /* border-radius: 10px; Border-radius will be handled by card-style-section */
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); Shadow will be handled by card-style-section */
+  padding: 25px;
+  margin-bottom: 25px;
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 
 /* Common styling for card-like sections (Media, Tabs) */
 .card-style-section {
-    background: var(--white-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    padding: 25px;
-    margin-bottom: 30px; /* Space between cards */
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
 .app-media h2, /* Keep this for the main "Media" title */
 .tab-pane h3    /* Style for titles inside tab panes */
 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    color: var(--primary-blue);
-    border-bottom: 2px solid var(--primary-blue);
-    padding-bottom: 10px;
-    font-size: 1.4em; /* Adjusted size for these titles */
+  font-size: 1.6em; /* Consistent heading size within cards */
+  color: var(--dark-text);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .app-media .screenshots-grid + h3 { /* Style for the "Videos" subheading if it exists */
-    margin-top: 25px; /* Add space above Videos heading if screenshots are present */
-    margin-bottom: 15px;
-    font-size: 1.2em;
-    color: var(--dark-text);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
+    margin-top: 20px; /* Add space above the Videos subheading */
 }
 
 /* Tabs Styling */
 
 .tab-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-    display: flex;
-    border-bottom: 2px solid var(--border-color);
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .tab-link {
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: 500;
-    color: var(--medium-gray);
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px; /* Align with the container's border */
-    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 1.1em;
+  color: var(--medium-gray);
+  position: relative;
+  transition: color 0.2s ease;
+  margin-right: 5px; /* Spacing between tabs */
 }
 
 .tab-link:hover {
-    color: var(--primary-blue);
+  color: var(--primary-blue);
 }
 
 .tab-link.active {
-    color: var(--primary-blue);
-    border-bottom-color: var(--primary-blue);
+  color: var(--primary-blue);
+  font-weight: bold;
+}
+
+.tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; /* Align with the .tab-nav border */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-blue);
 }
 
 .tab-pane {
-    display: none; /* Hide inactive panes */
-    padding-top: 15px;
+  display: none; /* Hidden by default */
+  padding: 15px 0; /* Padding for content inside tab */
+  animation: fadeIn 0.5s ease; /* Simple fade-in animation */
 }
 
 .tab-pane.active {
-    display: block; /* Show active pane */
+  display: block; /* Show active tab */
 }
 
 .tab-pane p {
-    font-size: 0.95em;
+    font-size: 1em;
     line-height: 1.7;
-    color: var(--dark-text);
+    color: var(--dark-text); /* Ensure readability */
 }
 
 /* Responsive Design */
 @media (max-width: 992px) { /* Adjusted breakpoint for better tablet handling */
-    .navbar .container {
+    .container {
+        width: 95%;
+    }
+
+    .app-detail-header-content {
         flex-direction: column;
-        align-items: flex-start;
-    }
-    .header-right-content {
-        width: 100%;
-        margin-top: 10px;
-        flex-direction: column;
-        align-items: stretch; /* Make search and nav full width */
-    }
-    .search-container {
-        width: 100%;
-        margin-bottom: 10px;
-        order: -1; /* Moves search bar above nav links on mobile */
-    }
-    #searchInput {
-        width: calc(100% - 60px); /* Adjust based on button width, more flexible */
-        border-radius: 20px; /* Full roundness when stacked */
-    }
-    #searchButton {
-        border-radius: 20px; /* Full roundness when stacked */
-        margin-left: -1px; /* Overlap slightly for better look */
-         /* Ensure button is not too wide if search input is very wide */
-        min-width: 60px;
+        align-items: center; /* Center icon and text block on smaller screens */
         text-align: center;
     }
-     .nav-links {
-        margin-top: 10px;
-        flex-direction: column;
-        width: 100%;
-        margin-left: 0; /* Reset margin */
+
+    .app-detail-icon {
+        margin-right: 0;
+        margin-bottom: 20px; /* Space between icon and text block */
     }
-    .nav-links li {
-        margin-left: 0;
-        margin-bottom: 8px; /* Reduced margin */
-        text-align: left; /* Align text left */
-        background: transparent; /* Remove background */
-        padding: 0;
+
+    .app-detail-main-info h1 {
+        font-size: 1.8em;
     }
-    .nav-links a {
-        display: block;
-        padding: 10px 15px; /* Add padding for better touch targets */
-        border-radius: 5px;
+
+    .app-meta-row {
+        justify-content: center;
     }
-    .nav-links a:hover, .nav-links a.active {
-        background-color: rgba(0,123,255,0.1); /* Light blue background on hover/active */
-        border-bottom: none; /* Remove border for stacked links */
-        color: var(--primary-blue); /* Ensure text color changes on active/hover */
+
+    .app-price-tag {
+        margin-left: 0; /* Reset margin for centered layout */
+        margin-top: 10px; /* Add some space if it wraps */
+    }
+
+    .app-detail-actions {
+        justify-content: center; /* Center download button */
+    }
+
+    .tab-nav {
+        flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+    }
+
+    .tab-link {
+        flex-basis: 50%; /* Example: two tabs per row */
+        text-align: center;
+        margin-right: 0;
+        border-bottom: 1px solid var(--border-color); /* Add separator for wrapped tabs */
+    }
+
+    .tab-link.active::after {
+        bottom: -1px; /* Adjust for the new border */
     }
 }
 
 
 @media (max-width: 768px) {
-  /* .navbar adjustments already handled by 992px, can refine if needed */
-
-  /* #searchInput { */
-    /* width: calc(100% - 70px); */ /* Further adjust if needed */
-  /* } */
-
   .app-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller tablets */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adjust for smaller items */
   }
 
-  .app-detail-header {
-      flex-direction: column;
-      align-items: center; /* Center items for stacked layout */
-      text-align: center;
-      margin-top: -60px; /* Adjust overlap for smaller screens */
-      padding-left: 0; /* Remove padding for centered layout */
+  .app-item h3 {
+    font-size: 1.1em;
   }
+  
+  /* App Details Page Responsive Adjustments */
+  #app-banner-placeholder {
+      height: 200px; /* Reduce banner height */
+  }
+
   .app-detail-icon {
-      margin-right: 0;
-      margin-bottom: 20px;
-      width: 120px; /* Adjust icon size */
-      height: 120px;
+      width: 100px;
+      height: 100px;
   }
-  .app-detail-info {
-      background-color: rgba(0,0,0,0.5); /* Semi-transparent dark background for readability */
-      width: 90%; /* Ensure it doesn't touch edges */
-      margin: 0 auto; /* Center the info box */
+
+  .app-detail-main-info h1 {
+      font-size: 1.6em;
   }
-  .app-detail-info h1 {
-      font-size: 2em;
+
+  .main-download-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+  }
+
+  #app-details-container > section,
+  #app-details-container > .tabs-container {
+      padding: 15px;
+  }
+
+  .tab-link {
+      font-size: 1em;
+      padding: 8px 15px;
+      flex-basis: 100%; /* Stack tabs vertically */
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    width: 95%; /* More space on small screens */
-    padding: 0 10px;
-  }
   .logo {
-    font-size: 1.6em; /* Adjusted size */
+    font-size: 1.5em;
   }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
   .app-grid {
-    grid-template-columns: 1fr; /* Single column */
-    gap: 20px;
+    grid-template-columns: 1fr; /* Single column layout */
   }
+
   .app-item {
-    padding: 15px;
+    margin-bottom: 15px;
   }
-  .app-icon {
-    width: 70px;
-    height: 70px;
+  
+  /* App Details Page Responsive Adjustments */
+  #app-banner-placeholder {
+      height: 150px; /* Further reduce banner height */
   }
-  .download-btn, .details-btn, .uninstall-btn {
-    padding: 10px 15px;
-    font-size: 0.85em;
+
+  .app-detail-icon {
+      width: 80px;
+      height: 80px;
   }
-  .screenshots-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Smaller screenshots */
+
+  .app-detail-main-info h1 {
+      font-size: 1.4em;
   }
-  .app-detail-info h1 {
-      font-size: 1.8em;
+
+  .app-category, .app-version {
+      font-size: 0.85em;
+      padding: 2px 6px;
   }
-  #searchInput {
-      width: calc(100% - 55px); /* Adjust for smaller search button */
+
+  .main-download-btn {
+      width: 100%; /* Make download button full width */
+      justify-content: center;
   }
-  #searchButton {
-      padding: 10px 12px;
+
+  .app-media .screenshots-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller screenshots */
+  }
+
+  .tab-link {
+      padding: 8px 10px;
   }
 }
