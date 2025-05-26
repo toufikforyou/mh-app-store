@@ -3,70 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Download Apps</title>
+    <title>App Store</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="container">
-      <h1>Welcome to the App Store</h1>
-      <p>Here is a list of our available apps for download:</p>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="logo">AppStore</a>
+          <div class="header-right-content">
+            <ul class="nav-links">
+              <li><a href="#featured" class="active">Featured</a></li>
+              <li><a href="#trending">Trending</a></li>
+              <li><a href="#recommended">Recommended</a></li>
+            </ul>
+            <div class="search-container">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search apps..."
+              />
+              <button id="searchButton">Search</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-      <div class="app-list">
-        <!-- App 1 -->
-        <div class="app-item">
-          <img
-            src="icons/color-matching-game.jpg"
-            alt="Mind Color Game Icon"
-            class="app-icon"
-          />
-          <h2>Mind Color Challenge</h2>
-          <p>Version v25.03.1.24</p>
-          <p>Description: This is an awesome game for Android users.</p>
-          <a
-            href="downloads/mind-color-challenge-game-v25.03.1.25.apk"
-            class="download-btn"
-            download
-            >Download APK</a
-          >
+    <main class="container">
+      <section id="featured-apps">
+        <h2>Featured Apps</h2>
+        <div class="app-grid" id="featuredAppGrid">
+          <!-- Apps will be dynamically inserted here by script.js -->
         </div>
-        <!-- App 2 -->
-        <div class="app-item">
-          <img
-            src="icons/hea_moslim_dampanto.png"
-            alt="App 1 Icon"
-            class="app-icon"
-          />
-          <h2>হে মুসলিম দাম্পত্য</h2>
-          <p>Version 1.0.0</p>
-          <p>Description: This is an awesome app for Android users.</p>
-          <a
-            href="downloads/hea_moslim_dampanto.apk"
-            class="download-btn"
-            download
-            >Download APK</a
-          >
-        </div>
+      </section>
 
-        <!-- App 3 -->
-        <div class="app-item">
-          <img
-            src="icons/hea_moslim_ovivabok.png"
-            alt="App 2 Icon"
-            class="app-icon"
-          />
-          <h2>হে মুসলিম অভিভাবক</h2>
-          <p>Version 1.0.0</p>
-          <p>Description: This is an awesome app for Android users.</p>
-          <a
-            href="downloads/hea_moslim_ovivabok.apk"
-            class="download-btn"
-            download
-            >Download APK</a
-          >
+      <section id="trending-apps">
+        <h2>Trending Apps</h2>
+        <div class="app-grid" id="trendingAppGrid">
+          <!-- Apps will be dynamically inserted here by script.js -->
         </div>
+      </section>
+
+      <section id="recommended-apps">
+        <h2>Recommended Apps</h2>
+        <div class="app-grid" id="recommendedAppGrid">
+          <!-- Apps will be dynamically inserted here by script.js -->
+        </div>
+      </section>
+
+      <section id="all-apps">
+        <h2>All Apps</h2>
+        <div class="app-grid" id="allAppGrid">
+          <!-- Existing app items will be moved here or dynamically loaded -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 AppStore. All rights reserved.</p>
       </div>
-    </div>
+    </footer>
 
     <!-- Cloudflare Web Analytics -->
     <script
@@ -75,5 +74,6 @@
       data-cf-beacon='{"token": "070a21e6f1d947f1b4ede741e3d0de33"}'
     ></script>
     <!-- End Cloudflare Web Analytics -->
+    <script src="script.js"></script>
   </body>
 </html>

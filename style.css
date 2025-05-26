@@ -5,82 +5,706 @@
   box-sizing: border-box;
 }
 
+/* Brand Colors */
+:root {
+  --primary-blue: #007bff;
+  --primary-blue-rgb: 0,123,255; /* Added for box-shadow */
+  --secondary-green: #28a745;
+  --dark-text: #343a40;
+  --light-bg: #f8f9fa;
+  --border-color: #dee2e6;
+  --white-color: #ffffff;
+  --medium-gray: #6c757d;
+  --light-gray: #adb5bd;
+}
+
 /* Body and Layout */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  line-height: 1.6;
 }
 
 .container {
-  width: 80%;
-  margin: 50px auto;
-  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto; /* Simplified margin */
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dark-text);
+  margin-bottom: 0.75em; /* Consistent bottom margin */
 }
 
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+  font-size: 2.2em; /* Slightly reduced */
 }
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 10px;
+  margin-bottom: 25px; /* Increased margin */
+}
+
+section h2 { /* Specific for section titles */
+  color: var(--primary-blue);
+  margin-top: 0;
+}
+
 
 p {
-  font-size: 1.2em;
+  font-size: 1em; /* Standardized */
+  margin-bottom: 1em;
+  color: var(--medium-gray);
+}
+
+/* Header & Navbar */
+header {
+  background: var(--white-color); /* Changed from gradient to white */
+  color: var(--dark-text); /* Changed for white background */
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color); /* Added border */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Softer shadow for white bg */
+}
+
+.navbar .container { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--primary-blue); /* Changed to primary blue for visibility */
+  text-decoration: none;
+  font-size: 1.9em;
+  font-weight: bold;
+  text-shadow: none; /* Removed text shadow as it might not look good on white */
+}
+
+.header-right-content {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 25px;
+}
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+
+.nav-links a {
+  color: var(--medium-gray); /* Changed to medium gray */
+  text-decoration: none;
+  font-size: 1.05em;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary-blue); /* Hover/active color to primary blue */
+  border-bottom-color: var(--primary-blue); /* Underline color to primary blue */
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 30px; /* Add margin to separate from nav links */
+}
+
+#searchInput {
+  padding: 10px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px 0 0 20px;
+  font-size: 0.95em;
+  width: 280px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--light-bg); /* Changed from transparent white to light-bg */
+  color: var(--dark-text);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-blue-rgb),.25);
+    background-color: var(--white-color);
+}
+
+#searchButton {
+  padding: 10px 18px;
+  background-color: var(--primary-blue); /* Changed to primary blue */
+  color: white;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Main Content */
+main {
+  padding: 25px 0; /* Increased padding */
+}
+
+section {
+  margin-bottom: 35px; /* Increased margin */
+  padding: 25px; /* Increased padding */
+  background: var(--white-color);
+  border-radius: 10px; /* Softer radius */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+}
+
+#featured-apps { /* Added specific style for featured apps section */
+    margin-top: 30px;
+}
+
+section h2 {
+  color: #333;
+  margin-top: 0;
+  border-bottom: 2px solid #0779e4;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
-/* App List Styling */
-.app-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 30px;
+/* App Grid Layout */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
 }
 
 .app-item {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  padding-bottom: 30px;
-  width: 250px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0; 
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .app-item:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow on hover */
 }
 
-.app-item h2 {
-  font-size: 1.6em;
+.app-item-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-item-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.app-item img.app-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px; /* Rounded corners for icon */
+  margin-right: 12px;
+  border: 1px solid var(--border-color);
+  object-fit: cover; /* Ensure icon covers the area */
+}
+
+.app-item-info {
+    flex-grow: 1;
+    min-width: 0; /* Prevent overflow issues with ellipsis */
+}
+
+.app-item h3 {
+  font-size: 1.2em; /* Adjusted for balance */
+  margin-bottom: 4px;
+  color: var(--dark-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.app-item .app-category {
+    font-size: 0.85em;
+    color: var(--medium-gray);
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.app-item .star-rating {
+  font-size: 0.9em;
+  color: #ffc107; /* Gold color for stars */
   margin-bottom: 10px;
 }
 
-.app-item p {
-  font-size: 1em;
-  margin-bottom: 15px;
+.app-item .app-description-preview {
+    font-size: 0.9em;
+    color: var(--medium-gray);
+    margin-bottom: 15px;
+    /* Fixed height for 2 lines approx - achieved with line-clamp */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* For Safari/Chrome */
+    line-clamp: 2; /* Standard */
+    -webkit-box-orient: vertical;
+    /* min-height: calc(2 * 1.6 * 0.9em); Ensure space for two lines */
 }
 
-.app-item .app-icon {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 15px;
+.app-item-actions {
+    padding: 12px 15px; /* Slightly adjusted padding */
+    border-top: 1px solid var(--border-color);
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Download Button */
-.download-btn {
-  text-decoration: none;
-  background-color: #4caf50;
+.app-item .price {
+  font-size: 1.05em; /* Adjusted size */
+  font-weight: bold;
+  color: var(--secondary-green);
+}
+
+.app-item .btn-install {
+  background-color: var(--secondary-green);
   color: white;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px; /* Pill-shaped buttons */
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
-.download-btn:hover {
-  background-color: #45a049;
+.app-item .btn-install:hover {
+  background-color: #1e7e34; /* Darker green */
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: var(--dark-text);
+  color: var(--light-gray); /* Lighter text for footer */
+  text-align: center;
+  padding: 25px 0; /* Increased padding */
+  margin-top: 35px; /* Increased margin */
+  font-size: 0.9em;
+}
+
+/* App Details Page */
+#app-banner-placeholder {
+    width: 100%;
+    height: 380px; 
+    background-color: var(--medium-gray); 
+    background-size: cover;
+    background-position: center center; 
+    position: relative;
+    display: flex; 
+    align-items: flex-end; 
+    margin-bottom: 30px; /* Added margin-bottom */
+}
+
+#app-banner-placeholder::before { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.8) 100%); /* Darker gradient from bottom */
+    z-index: 1;
+}
+
+.app-detail-header {
+    /* Removed margin-top, positioning is now handled by flex on placeholder */
+    position: relative; 
+    z-index: 2; 
+    width: 100%; /* Take full width of the banner */
+    padding: 0 40px 30px 40px; /* Bottom padding, side padding */
+    margin-bottom: 40px; 
+}
+
+.app-detail-header-content {
+    display: flex;
+    align-items: center; /* Changed from flex-end to center */
+    gap: 30px; 
+    width: 100%;
+}
+
+.app-detail-icon {
+    width: 120px; /* Slightly smaller, more refined icon size */
+    height: 120px;
+    border-radius: 22px; 
+    /* margin-right: 0; Replaced by gap in parent */
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.8); /* Semi-transparent white border */
+    box-shadow: 0 5px 18px rgba(0,0,0,0.3); 
+    background-color: var(--light-gray);
+    position: relative; 
+    z-index: 3; 
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.app-detail-main-info {
+    flex-grow: 1; 
+    color: var(--white-color);
+    /* padding-bottom: 5px; Removed as align-items: center is used */
+}
+
+.app-detail-main-info h1 {
+    margin-top: 0;
+    font-size: 2.6em; 
+    color: var(--dark-text); /* Changed to black (var(--dark-text)) */ 
+    font-weight: 600; /* Slightly less bold for modern feel */
+    margin-bottom: 8px; 
+    text-shadow: none; /* Removed text-shadow */
+    line-height: 1.2;
+}
+
+.app-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-bottom: 8px;
+}
+
+.app-category, .app-version {
+    font-size: 0.95em;
+    color: #e0e0e0; /* Reverted to a light color for visibility on dark gradient */
+    text-shadow: none; 
+    background-color: transparent; /* Removed background color */
+    padding: 0; /* Removed padding */
+    border-radius: 0; /* Removed border-radius */
+}
+
+.app-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between rating and price */
+    margin-bottom: 0; /* No margin if it's the last item in this block */
+}
+
+.app-detail-main-info .app-rating {
+    display: flex; 
+    align-items: center;
+    font-size: 0.95em; 
+    color: #e0e0e0; 
+    text-shadow: none; /* Removed text-shadow */
+}
+
+.app-detail-main-info .app-rating .stars {
+    font-size: 1.2em; 
+    color: #ffc107;
+    margin-right: 6px; 
+}
+
+.app-price-tag {
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--white-color);
+    background-color: var(--secondary-green); 
+    padding: 4px 10px;
+    border-radius: 5px;
+    text-shadow: none; /* Removed text-shadow */
+}
+
+.app-detail-actions {
+    margin-left: auto; 
+    /* padding-bottom: 5px; Removed as align-items: center is used */
+    flex-shrink: 0; 
+}
+
+.main-download-btn {
+    background-color: var(--primary-blue); /* Changed to primary blue */
+    color: var(--white-color);
+    padding: 12px 28px; /* Larger padding */
+    font-size: 1.15em; 
+    font-weight: 600;
+    border-radius: 8px; /* Less rounded, more modern */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 10px; /* Increased gap */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: none; 
+}
+
+.main-download-btn svg {
+    width: 22px; 
+    height: 22px;
+    fill: currentColor; 
+}
+
+.main-download-btn:hover {
+    background-color: #0056b3; /* Darker blue */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Remove old .app-detail-info styles that are now handled by .app-detail-main-info or sub-elements */
+.app-detail-info {
+    /* This class is no longer used for the main text block, 
+       but might be used elsewhere or can be removed if not. 
+       For now, clearing potentially conflicting styles. */
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+.app-detail-info h1, 
+.app-detail_info p, 
+.app-detail-info .app-meta-info, 
+.app-detail_info .app-category-version, 
+.app-detail-info .app-rating, 
+.app-detail-info .app-price {
+    /* Resetting styles that are now more specific or handled differently */
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    text-shadow: none;
+    background-color: transparent;
+}
+
+
+/* Adjustments for content below the banner/header */
+#app-details-container > section, 
+#app-details-container > .tabs-container { /* Apply to both sections and the new tabs container */
+    margin-top: 20px;
+    /* padding: 25px; Padding will be handled by card-style-section or specific elements */
+    /* background: var(--white-color); Background will be handled by card-style-section */
+    /* border-radius: 10px; Border-radius will be handled by card-style-section */
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); Shadow will be handled by card-style-section */
+}
+
+/* Common styling for card-like sections (Media, Tabs) */
+.card-style-section {
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    margin-bottom: 30px; /* Space between cards */
+}
+
+.app-media h2, /* Keep this for the main "Media" title */
+.tab-pane h3    /* Style for titles inside tab panes */
+{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    font-size: 1.4em; /* Adjusted size for these titles */
+}
+
+.app-media .screenshots-grid + h3 { /* Style for the "Videos" subheading if it exists */
+    margin-top: 25px; /* Add space above Videos heading if screenshots are present */
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: var(--dark-text);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+/* Tabs Styling */
+
+.tab-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--medium-gray);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Align with the container's border */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.tab-link:hover {
+    color: var(--primary-blue);
+}
+
+.tab-link.active {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+}
+
+.tab-pane {
+    display: none; /* Hide inactive panes */
+    padding-top: 15px;
+}
+
+.tab-pane.active {
+    display: block; /* Show active pane */
+}
+
+.tab-pane p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: var(--dark-text);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Adjusted breakpoint for better tablet handling */
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-right-content {
+        width: 100%;
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: stretch; /* Make search and nav full width */
+    }
+    .search-container {
+        width: 100%;
+        margin-bottom: 10px;
+        order: -1; /* Moves search bar above nav links on mobile */
+    }
+    #searchInput {
+        width: calc(100% - 60px); /* Adjust based on button width, more flexible */
+        border-radius: 20px; /* Full roundness when stacked */
+    }
+    #searchButton {
+        border-radius: 20px; /* Full roundness when stacked */
+        margin-left: -1px; /* Overlap slightly for better look */
+         /* Ensure button is not too wide if search input is very wide */
+        min-width: 60px;
+        text-align: center;
+    }
+     .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0; /* Reset margin */
+    }
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 8px; /* Reduced margin */
+        text-align: left; /* Align text left */
+        background: transparent; /* Remove background */
+        padding: 0;
+    }
+    .nav-links a {
+        display: block;
+        padding: 10px 15px; /* Add padding for better touch targets */
+        border-radius: 5px;
+    }
+    .nav-links a:hover, .nav-links a.active {
+        background-color: rgba(0,123,255,0.1); /* Light blue background on hover/active */
+        border-bottom: none; /* Remove border for stacked links */
+        color: var(--primary-blue); /* Ensure text color changes on active/hover */
+    }
+}
+
+
+@media (max-width: 768px) {
+  /* .navbar adjustments already handled by 992px, can refine if needed */
+
+  /* #searchInput { */
+    /* width: calc(100% - 70px); */ /* Further adjust if needed */
+  /* } */
+
+  .app-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust for smaller tablets */
+  }
+
+  .app-detail-header {
+      flex-direction: column;
+      align-items: center; /* Center items for stacked layout */
+      text-align: center;
+      margin-top: -60px; /* Adjust overlap for smaller screens */
+      padding-left: 0; /* Remove padding for centered layout */
+  }
+  .app-detail-icon {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 120px; /* Adjust icon size */
+      height: 120px;
+  }
+  .app-detail-info {
+      background-color: rgba(0,0,0,0.5); /* Semi-transparent dark background for readability */
+      width: 90%; /* Ensure it doesn't touch edges */
+      margin: 0 auto; /* Center the info box */
+  }
+  .app-detail-info h1 {
+      font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%; /* More space on small screens */
+    padding: 0 10px;
+  }
+  .logo {
+    font-size: 1.6em; /* Adjusted size */
+  }
+  .app-grid {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 20px;
+  }
+  .app-item {
+    padding: 15px;
+  }
+  .app-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .download-btn, .details-btn, .uninstall-btn {
+    padding: 10px 15px;
+    font-size: 0.85em;
+  }
+  .screenshots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Smaller screenshots */
+  }
+  .app-detail-info h1 {
+      font-size: 1.8em;
+  }
+  #searchInput {
+      width: calc(100% - 55px); /* Adjust for smaller search button */
+  }
+  #searchButton {
+      padding: 10px 12px;
+  }
 }

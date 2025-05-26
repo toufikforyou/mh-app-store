@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="index.html" class="logo">AppStore</a>
+          <ul class="nav-links">
+            <li><a href="index.html#featured">Featured</a></li>
+            <li><a href="index.html#trending">Trending</a></li>
+            <li><a href="index.html#recommended">Recommended</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container" id="profile-container">
+      <h1>User Profile</h1>
+      <section id="user-info">
+        <h2>Account Details</h2>
+        <p><strong>Username:</strong> <span id="username">DemoUser</span></p>
+        <p>
+          <strong>Email:</strong>
+          <span id="userEmail">demouser@example.com</span>
+        </p>
+        <!-- More user details can be added here -->
+      </section>
+
+      <section id="installed-apps">
+        <h2>My Installed Apps</h2>
+        <div class="app-grid" id="installedAppGrid">
+          <!-- Installed apps will be dynamically inserted here by profile.js -->
+        </div>
+      </section>
+
+      <section id="my-reviews">
+        <h2>My Reviews</h2>
+        <div id="userReviewsList">
+          <!-- User's reviews will be dynamically inserted here -->
+        </div>
+      </section>
+
+      <section id="add-review-section">
+        <h2>Rate and Review an App</h2>
+        <form id="reviewForm">
+          <div>
+            <label for="appToReview">Select App:</label>
+            <select id="appToReview" name="appToReview" required>
+              <!-- App options will be populated by profile.js -->
+            </select>
+          </div>
+          <div>
+            <label for="rating">Rating (1-5):</label>
+            <input
+              type="number"
+              id="rating"
+              name="rating"
+              min="1"
+              max="5"
+              required
+            />
+          </div>
+          <div>
+            <label for="reviewComment">Comment:</label>
+            <textarea
+              id="reviewComment"
+              name="reviewComment"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit Review</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 AppStore. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="profile.js"></script>
+  </body>
+</html>
