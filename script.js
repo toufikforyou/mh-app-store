@@ -18,7 +18,7 @@ const apps = [
     ],
     featured: true,
     trending: true,
-    banner: "screenshots/game_banner.jpg" // Assuming a banner image exists
+    banner: "screenshots/game_banner.jpg"
   },
   {
     id: 2,
@@ -60,30 +60,27 @@ const apps = [
     trending: true,
     banner: "screenshots/ovivabok_banner.jpg"
   },
-  // Add more app objects here, ensuring price is "Free"
 ];
 
 function renderApps(appsToRender, containerId) {
   const appGrid = document.getElementById(containerId);
   if (!appGrid) return;
-  appGrid.innerHTML = ""; // Clear existing content
+  appGrid.innerHTML = "";
 
   appsToRender.forEach((app) => {
     const appItem = document.createElement("div");
     appItem.classList.add("app-item");
-    // Make the entire card clickable to go to app details
     appItem.addEventListener('click', () => {
         window.location.href = `app-details.html?id=${app.id}`;
     });
 
-    // Star rating HTML
     let starsHTML = '';
     const fullStars = Math.floor(app.rating);
     const halfStar = app.rating % 1 !== 0; 
     const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
     for (let i = 0; i < fullStars; i++) starsHTML += '<span>&#9733;</span>';
-    if (halfStar) starsHTML += '<span class="half-star">&#9733;</span>'; // Could use a specific half-star icon or style
+    if (halfStar) starsHTML += '<span class="half-star">&#9733;</span>'; 
     for (let i = 0; i < emptyStars; i++) starsHTML += '<span class="empty-star">&#9734;</span>';
 
     appItem.innerHTML = `
@@ -115,8 +112,6 @@ function filterAndRenderApps() {
   );
 
   renderApps(filteredApps, "allAppGrid");
-
-  // Also update featured, trending, and recommended sections if needed
   renderApps(apps.filter(app => app.featured && app.name.toLowerCase().includes(searchTerm)), "featuredAppGrid");
   renderApps(apps.filter(app => app.trending && app.name.toLowerCase().includes(searchTerm)), "trendingAppGrid");
   renderApps(apps.filter(app => app.recommended && app.name.toLowerCase().includes(searchTerm)), "recommendedAppGrid");
@@ -126,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderApps(apps.filter(app => app.featured), "featuredAppGrid");
   renderApps(apps.filter(app => app.trending), "trendingAppGrid");
   renderApps(apps.filter(app => app.recommended), "recommendedAppGrid");
-  renderApps(apps, "allAppGrid"); // Initially render all apps in the "All Apps" section
+  renderApps(apps, "allAppGrid"); 
 
   const searchButton = document.getElementById("searchButton");
   if (searchButton) {
@@ -135,6 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const searchInput = document.getElementById("searchInput");
   if (searchInput) {
-    searchInput.addEventListener("input", filterAndRenderApps); // Live search
+    searchInput.addEventListener("input", filterAndRenderApps);
   }
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>App Store</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
   </head>
 
   <body>
@@ -19,30 +20,22 @@
     <main class="container">
       <section id="featured-apps">
         <h2>Featured Apps</h2>
-        <div class="app-grid" id="featuredAppGrid">
-          <!-- Apps will be dynamically inserted here by script.js -->
-        </div>
+        <div class="app-grid" id="featuredAppGrid"></div>
       </section>
 
       <section id="trending-apps">
         <h2>Trending Apps</h2>
-        <div class="app-grid" id="trendingAppGrid">
-          <!-- Apps will be dynamically inserted here by script.js -->
-        </div>
+        <div class="app-grid" id="trendingAppGrid"></div>
       </section>
 
       <section id="recommended-apps">
         <h2>Recommended Apps</h2>
-        <div class="app-grid" id="recommendedAppGrid">
-          <!-- Apps will be dynamically inserted here by script.js -->
-        </div>
+        <div class="app-grid" id="recommendedAppGrid"></div>
       </section>
 
       <section id="all-apps">
         <h2>All Apps</h2>
-        <div class="app-grid" id="allAppGrid">
-          <!-- Existing app items will be moved here or dynamically loaded -->
-        </div>
+        <div class="app-grid" id="allAppGrid"></div>
       </section>
     </main>
 
@@ -52,13 +45,11 @@
       </div>
     </footer>
 
-    <!-- Cloudflare Web Analytics -->
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "070a21e6f1d947f1b4ede741e3d0de33"}'
     ></script>
-    <!-- End Cloudflare Web Analytics -->
     <script src="script.js"></script>
   </body>
 </html>

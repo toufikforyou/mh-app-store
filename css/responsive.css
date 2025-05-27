@@ -1,0 +1,142 @@
+@media (max-width: 992px) { 
+    .container {
+        width: 95%;
+    }
+
+    .app-detail-header-content {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .app-detail-icon {
+        margin-right: 0;
+        margin-bottom: 20px; 
+    }
+
+    .app-detail-main-info h1 {
+        font-size: 1.8em;
+    }
+
+    .app-meta-row {
+        justify-content: center;
+    }
+
+    .app-price-tag {
+        margin-left: 0; 
+        margin-top: 10px; 
+    }
+
+    .app-detail-actions {
+        justify-content: center; 
+    }
+
+    .tab-nav {
+        flex-wrap: wrap; 
+    }
+
+    .tab-link {
+        flex-basis: 50%; 
+        text-align: center;
+        margin-right: 0;
+        border-bottom: 1px solid var(--border-color); 
+    }
+
+    .tab-link.active::after {
+        bottom: -1px; 
+    }
+}
+
+
+@media (max-width: 768px) {
+  .app-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+  }
+
+  .app-item h3 {
+    font-size: 1.1em;
+  }
+  
+  
+  #app-banner-placeholder {
+      height: 200px; 
+  }
+
+  .app-detail-icon {
+      width: 100px;
+      height: 100px;
+  }
+
+  .app-detail-main-info h1 {
+      font-size: 1.6em;
+  }
+
+  .main-download-btn {
+      padding: 10px 20px;
+      font-size: 1em;
+  }
+
+  #app-details-container > section,
+  #app-details-container > .tabs-container {
+      padding: 15px;
+  }
+
+  .tab-link {
+      font-size: 1em;
+      padding: 8px 15px;
+      flex-basis: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5em;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .app-item {
+    margin-bottom: 15px;
+  }
+  
+  #app-banner-placeholder {
+      height: 150px; 
+  }
+
+  .app-detail-icon {
+      width: 80px;
+      height: 80px;
+  }
+
+  .app-detail-main-info h1 {
+      font-size: 1.4em;
+  }
+
+  .app-category, .app-version {
+      font-size: 0.85em;
+      padding: 2px 6px;
+  }
+
+  .main-download-btn {
+      width: 100%; 
+      justify-content: center;
+  }
+
+  .app-media .screenshots-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+  }
+
+  .tab-link {
+      padding: 8px 10px;
+  }
+}

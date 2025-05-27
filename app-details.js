@@ -49,7 +49,7 @@ const apps = [
     apk: "downloads/hea_moslim_ovivabok.apk",
     category: "Parenting & Education",
     rating: 4.8,
-    price: "Free", // Price was $0.99, changed to Free as per previous logic
+    price: "Free", 
     screenshots: [],
     videos: [],
     changelog: "v1.1.0: New chapter on digital age parenting. Added interactive checklists. Enhanced user interface.",
@@ -60,7 +60,7 @@ const apps = [
     trending: true,
     banner: "screenshots/ovivabok_banner.jpg"
   },
-  // Add more app objects here
+  
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -164,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
 
-        // Tab switching logic
         const tabLinks = appDetailsContainer.querySelectorAll('.tab-link');
         const tabPanes = appDetailsContainer.querySelectorAll('.tab-pane');
 
