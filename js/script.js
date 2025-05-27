@@ -71,7 +71,7 @@ function renderApps(appsToRender, containerId) {
     const appItem = document.createElement("div");
     appItem.classList.add("app-item");
     appItem.addEventListener('click', () => {
-        window.location.href = `app-details.html?id=${app.id}`;
+        window.location.href = `details.html?id=${app.id}`;
     });
 
     let starsHTML = '';
