@@ -11,21 +11,34 @@ Welcome to the App Store, a project showcasing a simple web-based application st
 
 ## Screenshots
 
-Here are a couple of example screenshots from one of the apps:
+Here are some example screenshots from one of the apps:
 
 **Mind Color Challenge Screenshots:**
 
-![Screenshot 1](screenshots/mcc/1.jpg)
-![Screenshot 2](screenshots/mcc/2.jpg)
+<table>
+  <tr>
+    <td><img src="screenshots/mcc/1.jpg" alt="Screenshot 1" width="200"/></td>
+    <td><img src="screenshots/mcc/2.jpg" alt="Screenshot 2" width="200"/></td>
+    <td><img src="screenshots/mcc/3.jpg" alt="Screenshot 3" width="200"/></td>
+    <td><img src="screenshots/mcc/4.jpg" alt="Screenshot 4" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/mcc/5.jpg" alt="Screenshot 5" width="200"/></td>
+    <td><img src="screenshots/mcc/6.jpg" alt="Screenshot 6" width="200"/></td>
+    <td><img src="screenshots/mcc/7.jpg" alt="Screenshot 7" width="200"/></td>
+    <td><img src="screenshots/mcc/8.jpg" alt="Screenshot 8" width="200"/></td>
+  </tr>
+</table>
+
 _Note: Add more relevant screenshots of the App Store interface itself if available._
 
 ## Access the App Store
 
 You can access the live App Store via the following link:
 
-[![App Store Link](https://img.shields.io/badge/Visit-App%20Store-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXN0b3JlIj48cGF0aCBkPSJNMTIgN0gyYTJhIDIgMCAwIDAtMiAydjExYTIgMiAwIDAgMCAyIDJoMTZhMiAyIDAgMCAwIDItMlY5Ii8+PHBhdGggZD0iTTE5IDIxVjdjMC0xLjEtLjktMi0yLTJoLTVhMiAyIDAgMCAwLTItMnYwYTIgMiAwIDAgMCAyLTJoNWExIDEgMCAwIDEgMSAxaDJhMSAxIDAgMCAxIDEgMXYxIi8+PHBhdGggZD0iTTEyIDE4bC0yLTEwSDQiLz48cGF0aCBkPSJNMTIgMThsMi0xMGgxMCIvPjwvc3ZnPg==)](https://apps.toufikhasan.com/)
+<a href="https://apps.toufikhasan.com/" target="_blank"><img src="https://img.shields.io/badge/Visit-App%20Store-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXN0b3JlIj48cGF0aCBkPSJNMTIgN0gyYTJhIDIgMCAwIDAtMiAydjExYTIgMiAwIDAgMCAyIDJoMTZhMiAyIDAgMCAwIDItMlY5Ii8+PHBhdGggZD0iTTE5IDIxVjdjMC0xLjEtLjktMi0yLTJoLTVhMiAyIDAgMCAwLTItMnYwYTIgMiAwIDAgMCAyLTJoNWExIDEgMCAwIDEgMSAxaDJhMSAxIDAgMCAxIDEgMXYxIi8+PHBhdGggZD0iTTEyIDE4bC0yLTEwSDQiLz48cGF0aCBkPSJNMTIgMThsMi0xMGgxMCIvPjwvc3ZnPg==" alt="App Store Link"></a>
 
-Or directly: [https://apps.toufikhasan.com/](https://apps.toufikhasan.com/)
+Or directly: <a href="https://apps.toufikhasan.com/" target="_blank">https://apps.toufikhasan.com/</a>
 
 ## Technologies Used
 
