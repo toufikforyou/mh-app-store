@@ -9,8 +9,8 @@ const apps = [
     category: "Puzzle Games",
     rating: 4.5,
     price: "Free",
-    screenshots: ["screenshots/game_ss1.jpg", "screenshots/game_ss2.jpg"],
-    videos: ["videos/game_trailer.mp4"],
+    screenshots: ["screenshots/mcc/1.jpg", "screenshots/mcc/2.jpg", "screenshots/mcc/3.jpg", "screenshots/mcc/4.jpg", "screenshots/mcc/5.jpg", "screenshots/mcc/6.jpg", "screenshots/mcc/7.jpg", "screenshots/mcc/8.jpg"],
+    videos: [],
     changelog: "v25.03.1.24: Enhanced graphics, fixed minor bugs, and added 10 new challenging levels. Improved performance on older devices.",
     reviews: [
       { user: "GamerPro123", rating: 5, comment: "Absolutely love the new levels! So addictive and visually stunning." },
@@ -30,7 +30,7 @@ const apps = [
     category: "Lifestyle & Education",
     rating: 4.7,
     price: "Free",
-    screenshots: ["screenshots/dampattya_ss1.png", "screenshots/dampattya_ss2.png"],
+    screenshots: [],
     videos: [],
     changelog: "v1.0.2: Added new articles on communication. Improved UI for easier navigation. Fixed typos reported by users.",
     reviews: [
@@ -50,7 +50,7 @@ const apps = [
     category: "Parenting & Education",
     rating: 4.8,
     price: "Free", // Price was $0.99, changed to Free as per previous logic
-    screenshots: ["screenshots/ovivabok_ss1.png", "screenshots/ovivabok_ss2.jpg"],
+    screenshots: [],
     videos: [],
     changelog: "v1.1.0: New chapter on digital age parenting. Added interactive checklists. Enhanced user interface.",
     reviews: [

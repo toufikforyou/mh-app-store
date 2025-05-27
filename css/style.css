@@ -428,6 +428,18 @@ footer {
   padding-bottom: 8px;
   margin-bottom: 15px;
 }
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 15px; /* Space between screenshots */
+  margin-bottom: 20px; /* Space below the grid */
+}
+.screenshots-grid img {
+  width: 100%; /* Full width of the grid item */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Softer corners */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
 
 .app-media .screenshots-grid + h3 { /* Style for the "Videos" subheading if it exists */
     margin-top: 20px; /* Add space above the Videos subheading */
