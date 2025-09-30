@@ -63,6 +63,18 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo:active {
+    transform: scale(0.95);
 }
 
 .logo i {
@@ -490,7 +502,23 @@ body {
 .modal-app-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1.5rem;
+}
+
+.modal-app-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.modal-app-details {
+    flex: 1;
+}
+
+.modal-app-actions {
+    flex-shrink: 0;
 }
 
 .modal-app-icon {
@@ -622,6 +650,51 @@ body {
     background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
 }
 
+.download-btn-header {
+    background: var(--white);
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.download-btn-header:hover::before {
+    left: 100%;
+}
+
+.download-btn-header:hover {
+    background: var(--primary-green);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+}
+
+.download-btn-header i {
+    font-size: 0.9rem;
+}
+
 /* Footer */
 .footer {
     background: var(--white);
@@ -722,7 +795,21 @@ body {
     
     .modal-app-header {
         flex-direction: column;
+        gap: 1rem;
         text-align: center;
+    }
+    
+    .modal-app-info {
+        justify-content: center;
+    }
+    
+    .modal-app-actions {
+        width: 100%;
+    }
+    
+    .download-btn-header {
+        width: 100%;
+        justify-content: center;
     }
     
     .modal-stats {

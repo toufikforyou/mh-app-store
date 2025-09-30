@@ -311,14 +311,21 @@ class MHStore {
         return `
             <div class="modal-header">
                 <div class="modal-app-header">
-                    <img src="${app.icon}" alt="${app.name}" class="modal-app-icon">
                     <div class="modal-app-info">
-                        <h2>${app.name}</h2>
-                        <p class="modal-app-developer">${app.developer}</p>
-                        <div class="rating">
-                            <div class="stars">${this.renderStars(app.rating)}</div>
-                            <span>${app.rating}</span>
+                        <img src="${app.icon}" alt="${app.name}" class="modal-app-icon">
+                        <div class="modal-app-details">
+                            <h2>${app.name}</h2>
+                            <p class="modal-app-developer">${app.developer}</p>
+                            <div class="rating">
+                                <div class="stars">${this.renderStars(app.rating)}</div>
+                                <span>${app.rating}</span>
+                            </div>
                         </div>
+                    </div>
+                    <div class="modal-app-actions">
+                        <button class="download-btn-header" onclick="store.downloadApp('${app.link}')">
+                            <i class="fas fa-download"></i> Download App
+                        </button>
                     </div>
                 </div>
             </div>
@@ -350,10 +357,6 @@ class MHStore {
             ${this.renderScreenshots(app)}
             ${this.renderWhatsNew(app)}
             ${this.renderReviews(app)}
-
-            <button class="download-btn" onclick="store.downloadApp('${app.link}')">
-                <i class="fas fa-download"></i> Download App
-            </button>
         `;
     }
 
@@ -424,6 +427,56 @@ class MHStore {
         // For demo purposes, we'll just open the link
         window.open(link, '_blank');
     }
+}
+
+// Logo reload functionality
+function handleLogoClick() {
+    const logo = document.querySelector('.logo');
+    
+    // Add refreshing animation
+    logo.classList.add('logo-refreshing');
+    
+    // Close any open modals first
+    const modal = document.getElementById('app-modal');
+    if (modal && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Clear search input
+    const searchInput = document.querySelector('.search-input');
+    if (searchInput) {
+        searchInput.value = '';
+    }
+    
+    // Reset filters
+    setTimeout(() => {
+        const categoryFilter = document.getElementById('category-filter');
+        const sortFilter = document.getElementById('sort-filter');
+        if (categoryFilter) categoryFilter.value = '';
+        if (sortFilter) sortFilter.value = 'rating';
+        
+        // Trigger filter update if store is initialized
+        if (window.store) {
+            window.store.filterApps();
+        }
+        
+        // Reset active navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#featured') {
+                link.classList.add('active');
+            }
+        });
+    }, 300);
+    
+    // Remove animation class after animation completes
+    setTimeout(() => {
+        logo.classList.remove('logo-refreshing');
+    }, 800);
 }
 
 // Initialize the store when the DOM is loaded

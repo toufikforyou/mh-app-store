@@ -46,10 +46,12 @@ Updated MH Store to use a modern, clean black and white design with green and bl
 - Black primary text, gray secondary text
 - Clean, modern spacing
 
-### 6. **Modal Design**
+### 6. **Modal Design** ✨ **UPDATED**
 - Black header with gradient accent line
-- White close button with gray border
-- Green download button with hover effects
+- **Download button prominently placed in header** for better UX
+- White close button with gray border  
+- Header download button with shimmer animation effect
+- Responsive layout that stacks on mobile devices
 - Consistent use of gray backgrounds for stats and reviews
 
 ### 7. **Interactive Elements**
