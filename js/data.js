@@ -6,9 +6,14 @@ const apps = [
         rating: 4.5,
         icon: "icons/color-matching-game.jpg",
         screenshots: [
-            "screenshots/game_ss1.jpg",
-            "screenshots/game_ss2.jpg",
-            "screenshots/game_banner.jpg"
+            "screenshots/mcc/1.jpg",
+            "screenshots/mcc/2.jpg",
+            "screenshots/mcc/3.jpg",
+            "screenshots/mcc/4.jpg",
+            "screenshots/mcc/5.jpg",
+            "screenshots/mcc/6.jpg",
+            "screenshots/mcc/7.jpg",
+            "screenshots/mcc/8.jpg"
         ],
         description: "Challenge your mind with vibrant colors and engaging gameplay. Test your reflexes and color matching skills in this addictive puzzle game. A fun experience for all ages!",
         link: "https://github.com/toufikforyou/mind-color-challenge-game/releases/latest/download/app-release-signed.apk",

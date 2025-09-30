@@ -743,6 +743,11 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .header-content .nav {
+        display: none;
+    }
+}
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
@@ -756,8 +761,7 @@ body {
     }
     
     .search-container {
-        order: 2;
-        max-width: 100%;
+        display: none;
     }
     
     .hero-title {
