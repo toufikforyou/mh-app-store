@@ -77,26 +77,26 @@ const apps = [
     },
     {
         id: 4,
-        name: "Super Editor",
-        category: "Creativity",
+        name: "Uttara University ERP",
+        category: "Education",
         rating: 4.5,
-        icon: "https://placehold.co/64x64/00F076/FFFFFF/png?text=SE",
+        icon: "./icons/uu-logo-for-erp-android-application.png",
         screenshots: [
             "https://placehold.co/800x450/00F076/FFFFFF/png?text=Screenshot+1",
             "https://placehold.co/800x450/00F076/FFFFFF/png?text=Screenshot+2",
             "https://placehold.co/800x450/00F076/FFFFFF/png?text=Screenshot+3"
         ],
-        description: "Super Editor is the ultimate tool for all your creative needs. Edit photos, videos, and more with a powerful and intuitive interface.",
-        link: "https://toufikhasan.com/apps/1.apk",
-        downloads: "1M+",
+        description: "The ERP app for Uttara University (WebApp) students and faculty build by MH TOUFIK. Access your academic records, course materials, and university announcements on the go.",
+        link: "https://github.com/toufikforyou/uttara-university-erp/releases/latest/download/app-release-signed.apk",
+        downloads: "1K+",
         ageRating: "Everyone",
-        developer: "Creative Inc.",
+        developer: "MH TOUFIK",
         whatsNew: "Bug fixes and performance improvements.",
         reviews: [
-            { user: "Alice", avatar: "https://placehold.co/32x32/F53349/FFFFFF/png", rating: 5, comment: "The best editor I have ever used!" },
+            { user: "Alice", avatar: "https://placehold.co/32x32/F53349/FFFFFF/png", rating: 5, comment: "The best ERP app I have ever used!" },
             { user: "Bob", avatar: "https://placehold.co/32x32/00C9FF/FFFFFF/png", rating: 4, comment: "Great app, but could use more features." }
         ],
-        featured: false
+        featured: true
     },
     {
         id: 5,
@@ -133,7 +133,7 @@ const apps = [
         developer: "Music Lovers",
         whatsNew: "Improved recommendations.",
         reviews: [],
-        featured: true
+        featured: false
     },
     {
         id: 7,
