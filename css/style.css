@@ -808,6 +808,10 @@ body {
         align-items: center;
     }
     
+    .modal-app-details .rating {
+        justify-content: center;
+    }
+    
     .modal-app-actions {
         width: 100%;
     }
