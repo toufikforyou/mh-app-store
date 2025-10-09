@@ -40,7 +40,7 @@ const apps = [
             "screenshots/dampattya_banner.jpg"
         ],
         description: "A comprehensive guide for Muslim couples, offering advice and teachings for a harmonious marital life based on Islamic principles. Includes Q&A and practical tips.",
-        link: "downloads/hea_moslim_dampanto.apk",
+        link: "https://github.com/toufikforyou/hea-muslim-dampatya-book-app/releases/latest/download/app-release-signed.apk",
         downloads: "5K+",
         ageRating: "Everyone",
         developer: "MH TOUFIK",
@@ -64,7 +64,7 @@ const apps = [
             "screenshots/ovivabok_banner.jpg"
         ],
         description: "Essential guidance for Muslim parents and guardians on raising children according to Islamic teachings. Covers various aspects of upbringing, education, and character development.",
-        link: "downloads/hea_moslim_ovivabok.apk",
+        link: "https://github.com/toufikforyou/hea-muslim-ovivabok-book-app/releases/latest/download/app-release-signed.apk",
         downloads: "2.5K+",
         ageRating: "Everyone",
         developer: "MH TOUFIK",
